@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>exerciceCanvas1</title>
+    <script src="jquery-3.2.1.js"></script>
+  </head>
+  <body>
+    <canvas id="canvas" width="400" height="400">
+      Texte alternatif pour les navigateurs ne supportant pas Canvas.
+    </canvas>
+    <script>
+      var c=document.getElementById('canvas');
+      var ctx=c.getContext("2d");
+
+      //tracé des murs
+      ctx.moveTo(100,100);    // Le tracé part du point 100,100
+      ctx.lineTo(200,100);  // Un segment est ajouté vers 200,200
+      ctx.lineTo(200,210);   // Puis on trace jusqu'à 100,200
+      ctx.lineTo(100,210);   // Puis on trace jusqu'à 100,200
+      ctx.fillStyle = '#A1D8E6';
+      ctx.fill();
+      ctx.closePath();      // Fermeture du chemin (facultative)
+      // Le tracé du toit
+      ctx.beginPath();      // Début du chemin
+      ctx.moveTo(100,100);
+      ctx.lineTo(150,50);
+      ctx.lineTo(200,100);
+      ctx.fillStyle = '#D7823D';
+      ctx.fill();
+      ctx.closePath();      // Fermeture du chemin (facultative)
+      // tracé d'une fenêtre
+      ctx.beginPath();      // Début du chemin
+      ctx.moveTo(110,110);
+      ctx.lineTo(130,110);
+      ctx.lineTo(130,130);
+      ctx.lineTo(110,130);
+      ctx.fillStyle = '#C9C9C9';
+      ctx.fill();
+      ctx.closePath();      // Fermeture du chemin (facultative)
+      //tracé de la deuxième fenêtre
+      ctx.beginPath();      // Début du chemin
+      ctx.moveTo(190,110);
+      ctx.lineTo(170,110);
+      ctx.lineTo(170,130);
+      ctx.lineTo(190,130);
+      ctx.fill();
+      ctx.closePath();      // Fermeture du chemin (facultative)
+      //tracé de la porte
+      ctx.beginPath();      // Début du chemin
+      ctx.moveTo(135,210);
+      ctx.lineTo(165,210);
+      ctx.lineTo(165,160);
+      ctx.lineTo(135,160);
+      ctx.fill();
+      ctx.closePath();      // Fermeture du chemin (facultative)
+    </script>
+  </body>
+</html>
